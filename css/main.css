@@ -12,39 +12,76 @@
   margin: 0;
   padding: 0;
   font-family: Roboto, sans-serif;
-  font-weight:400;
+  font-weight: 400;
   font-size: 16px;
   color: var(--text-color);
 }
 
-.page{
-  min-height:100vh;
-  min-width:100vw;
+.page {
+  min-height: 100vh;
+  min-width: 100vw;
   background-color: var(--background-color);
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.card{
-  width: 800px;
+
+.card {
   border: var(--primary-filler-color) solid 4px;
   border-radius: 8px;
-  /*padding: 16px;*/
   background-color: var(--secondary-filler-color);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2.5fr;
 }
 
-.card-image{
+.card-image {
   background-image: url("https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAapgor.img?w=1920&h=1080&q=60&m=2&f=jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 8px 0 0 8px;
+  border-radius: 4px 4px 0 0;
 }
 
-.card-main{
+.card-main {
   padding: 16px;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
 }
+
+.card-main > h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card-main > article > p::before{
+  margin-right: 2em;
+  content:"";
+}
+.card-main > article > img {
+  width: 200px;
+  float: left;
+  margin: 0 16px 16px 0 ;
+}
+
+.card-main > p {
+  allign-self: flex-end;
+  font-size: .9rem;
+}
+
+@media (min-width: 800px )
+{
+  .card{
+    width: 800px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+  }
+  .card-image{
+    border-radius: 8px 0 0 8px;
+  }
+}
+
+
+
